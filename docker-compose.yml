@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  ##############
+  # GATE-NODE: #
+  ##############
+  
+  gate-node:
+    image: ${GATENODE_IMAGE}
+    env_file: env_file
+    restart: always
+    volumes:
+      - virtualenv:/code
+    ports:
+      - "${GATENODE_SOCKETIO_PORT}:3002"
+      - "${GATENODE_OSC_LOCALPORT}:57122/tcp"
+      - "${GATENODE_OSC_LOCALPORT}:57122/udp"   
+
+  ############
+  # PLUGINS: #
+  ############
+  
+  # media server for gate-node
+  #media-node:
+  #  image: ${MEDIANODE_IMAGE}
+  #  env_file: env_file
+  #  restart: always
+  #  volumes:
+  #    - "${MEDIANODE_IMAGES_DATA_PATH}:/code/data/images"
+  #    - "${MEDIANODE_VIDEOS_DATA_PATH}:/code/data/videos"
+  #  ports:
+  #    - "${MEDIANODE_HOSTNAME}:${MEDIANODE_PORT}:3080"
+
+volumes:
+  virtualenv:
+    external: true
