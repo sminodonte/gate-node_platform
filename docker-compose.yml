@@ -7,7 +7,7 @@ services:
   
   gate-node:
     image: ${GATENODE_IMAGE}
-    env_file: env_file
+    env_file: do_not_touch_file
     restart: always
     volumes:
       - virtualenv:/code
@@ -23,7 +23,7 @@ services:
   # media server for gate-node
   #media-node:
   #  image: ${MEDIANODE_IMAGE}
-  #  env_file: env_file
+  #  env_file: do_not_touch_file
   #  restart: always
   #  volumes:
   #    - "${MEDIANODE_IMAGES_DATA_PATH}:/code/data/images"

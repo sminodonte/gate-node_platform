@@ -5,6 +5,14 @@
 # LOG
 NODE_ENV=console
 
+#--------#
+# DEVICE #
+#--------#
+
+EXTERNAL_IP=$EXTERNAL_IP
+INTERNAL_IP=$INTERNAL_IP
+VPN_IP=$VPN_IP
+
 #-----------#
 # GATE-NODE #
 #-----------#
@@ -24,6 +32,7 @@ GATENODE_OSC_REMOTEPORT=57121
 NODE_NAME=default_name
 NODE_TYPE=software
 NODE_SUBTYPE=DAT
+NODE_SERVICES=default_algorithm
 
 #---------#
 # PLUGINS #

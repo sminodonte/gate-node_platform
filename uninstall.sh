@@ -3,6 +3,9 @@
 # load configuration variables
 source .env
 
+# DELETE NODE FROM NETWORK
+docker exec -i gate-node_platform_gate-node_1 /bin/sh unregister.sh
+sleep 4s
 # stop and delete gate-node_platform container if already exists
 docker-compose down
 sleep 2s
